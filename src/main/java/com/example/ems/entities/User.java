@@ -1,50 +1,52 @@
-package com.example.cms.entities;
+package com.example.ems.entities;
+
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "users")
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
 
     @Column(unique = true, nullable = false)
-    private String username;
+    private String email;
 
     @Column(nullable = false)
     private String password;
 
-    @Column(unique = true, nullable = false)
-    private String email;
-
-    @Column(nullable = false)
-    private String fullName;
-
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private Role role; // ADMIN or EMPLOYEE
+    private Role role;
+
+    @Enumerated(EnumType.STRING)
+    private Status status = Status.ACTIVE;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
     @PrePersist
-    protected void onCreate() {
-        createdAt = LocalDateTime.now();
+    public void prePersist() {
+        this.createdAt = LocalDateTime.now();
     }
 
     @PreUpdate
-    protected void onUpdate() {
-        updatedAt = LocalDateTime.now();
+    public void preUpdate() {
+        this.updatedAt = LocalDateTime.now();
     }
 
-    public enum Role { // we can modify the enums separately
-        ADMIN, EMPLOYEE
+    public enum Role {
+        ADMIN, HR, MANAGER, EMPLOYEE
+    }
+
+    public enum Status {
+        ACTIVE, PENDING_APPROVAL, DISABLED
     }
 }

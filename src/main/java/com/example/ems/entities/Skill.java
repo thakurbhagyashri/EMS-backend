@@ -1,41 +1,35 @@
-package com.example.cms.entities;
+package com.example.ems.entities;
 
-import com.example.cms.entities.Client;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "clients")
-@Getter
-@Setter
+@Table(name = "skills")
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Client {
+public class Skill {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long clientId;
+    private Long skillId;
 
-    @Column(nullable = false)
     private String name;
+    private String description;
 
-    @Column(unique = true, nullable = false)
-    private String email;
+    @Enumerated(EnumType.STRING)
+    private Category category;
 
-    @Column(nullable = false)
-    private String phone;
-
-    private String address;
-    private String additionalNotes;
-
-    @ManyToOne
-    @JoinColumn(name = "assigned_to", nullable = false)
-    private User assignedTo;
+    private boolean isActive;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+
+    public enum Category {
+        TECHNICAL, SOFT, DOMAIN, SERVICE
+    }
 
     @PrePersist
     protected void onCreate() {

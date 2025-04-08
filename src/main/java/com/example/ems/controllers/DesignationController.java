@@ -2,7 +2,8 @@ package com.example.ems.controllers;
 
 import com.example.ems.entities.Designation;
 import com.example.ems.entities.Employee;
-import com.example.ems.service.DesignationService;
+import com.example.ems.exceptions.ResourceNotFoundException;
+import com.example.ems.services.impl.DesignationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
@@ -27,7 +28,7 @@ public class DesignationController {
     public ResponseEntity<Designation> getDesignationById(@PathVariable Long id) {
         return designationService.getDesignationById(id)
                 .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+                .orElseThrow(() -> new ResourceNotFoundException("Designation not found with ID: " + id));
     }
 
     @GetMapping("/employee/{employeeId}")

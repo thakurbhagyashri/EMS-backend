@@ -1,6 +1,6 @@
-package com.example.ems.mapper;
+package com.example.ems.mappers;
 
-import com.example.ems.DTO.DesignationDTO;
+import com.example.ems.dto.DesignationDTO;
 import com.example.ems.entities.Designation;
 import com.example.ems.entities.Employee;
 

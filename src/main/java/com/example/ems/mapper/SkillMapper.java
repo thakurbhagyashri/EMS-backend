@@ -17,11 +17,13 @@ public class SkillMapper {
 
     // Entity → DTO
     public static SkillsDTO toDTO(Skill skill) {
+        System.out.println("only for Push");
         return SkillsDTO.builder()
                 .name(skill.getName())
                 .description(skill.getDescription())
                 .category(SkillsDTO.Category.valueOf(skill.getCategory().name())) // Enum mapping
                 .isActive(skill.isActive())
                 .build();
+
     }
 }

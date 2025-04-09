@@ -24,5 +24,12 @@ public class PerformanceReviewController {
         List<PerformanceReviewDto> reviews = service.getReviewsByEmployeeId(employeeId);
         return ResponseEntity.ok(reviews);
     }
+
+    @PostMapping
+    public ResponseEntity<PerformanceReviewDto> createReview(@RequestBody PerformanceReviewDto dto) {
+        PerformanceReviewDto createdReview = service.createReview(dto);
+        return ResponseEntity.ok(createdReview);
+    }
+
 }
 

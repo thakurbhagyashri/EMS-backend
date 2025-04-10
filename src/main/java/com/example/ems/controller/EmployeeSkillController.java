@@ -1,35 +1,38 @@
 package com.example.ems.controller;
 
+import com.example.ems.DTO.EmployeeSkillDTO;
 import com.example.ems.entities.EmployeeSkill;
 import com.example.ems.service.EmployeeSkillService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/employee")
+@RequiredArgsConstructor
+@RequestMapping("/api/employees")
 public class EmployeeSkillController {
 
-    @Autowired
-    private EmployeeSkillService employeeSkillService;
+    private final EmployeeSkillService employeeSkillService;
 
-    public EmployeeSkillController(EmployeeSkillService employeeSkillService) {
-        this.employeeSkillService = employeeSkillService;
+    @PostMapping("/{employeeId}/skills")
+    public ResponseEntity<EmployeeSkillDTO> addEmployeeSkill(
+            @PathVariable Long employeeId,
+            @RequestBody EmployeeSkillDTO dto) {
+        return ResponseEntity.ok(employeeSkillService.addSkill(employeeId, dto));
     }
 
-    @GetMapping("/{id}/skill")
-    public List<EmployeeSkill> fetchEmployeeSkills(@PathVariable Long id) {
-        return employeeSkillService.fetchSkill(id);
+    @GetMapping("/{employeeId}/skills")
+    public ResponseEntity<List<EmployeeSkillDTO>> getEmployeeSkills(@PathVariable Long employeeId) {
+        return ResponseEntity.ok(employeeSkillService.getSkill(employeeId));
     }
 
-    @PostMapping("/{empid}/skill")
-    public void addEmployeeSkill(@PathVariable Long empid,@RequestBody EmployeeSkill employeeSkill) {
-        employeeSkillService.addSkill(employeeSkill);
-    }
-
-    @PutMapping("/{id}/skill/{Skillid}")
-    public void updateEmployeeSkill(@PathVariable Long id,@PathVariable Long Skillid, @RequestBody EmployeeSkill employeeSkill) {
-        employeeSkillService.updateSkill(id,Skillid,employeeSkill);
+    @PutMapping("/{employeeId}/skills/{skillId}")
+    public ResponseEntity<EmployeeSkillDTO> updateEmployeeSkill(
+            @PathVariable Long employeeId,
+            @PathVariable Long skillId,
+            @RequestBody EmployeeSkillDTO dto) {
+        return ResponseEntity.ok(employeeSkillService.updateSkill(employeeId, skillId, dto));
     }
 }

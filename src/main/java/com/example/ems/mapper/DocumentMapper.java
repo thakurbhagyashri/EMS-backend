@@ -23,7 +23,7 @@ public class DocumentMapper {
                 .documentType(dto.getDocumentType())
                 .issueDate(dto.getIssueDate())
                 .expiryDate(dto.getExpiryDate())
-                .isVerified(dto.isVerified())
+                .isVerified(dto.getIsVerified())
                 .build();
     }
 }

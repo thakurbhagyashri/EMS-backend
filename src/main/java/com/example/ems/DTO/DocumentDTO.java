@@ -1,5 +1,6 @@
 package com.example.ems.DTO;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import java.time.LocalDate;
 
@@ -14,5 +15,14 @@ public class DocumentDTO {
     private String documentType;
     private LocalDate issueDate;
     private LocalDate expiryDate;
-    private boolean isVerified;
+    @JsonProperty("isVerified")
+    private Boolean isVerified;
+
+    public Boolean getIsVerified() {
+        return isVerified;
+    }
+
+    public void setIsVerified(Boolean isVerified) {
+        this.isVerified = isVerified;
+    }
 }

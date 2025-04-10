@@ -11,6 +11,7 @@ import com.example.ems.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -71,6 +72,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         Employee employee = employeeRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Employee not found"));
         employee.setEmploymentStatus(Employee.EmploymentStatus.TERMINATED);
+        employee.setTerminationDate(LocalDate.now()); // Optionally set termination date
         employeeRepository.save(employee);
     }
 }

@@ -7,12 +7,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 public interface CompensationService {
-    //public List<CompensationDTO> getAllCompensation();
-
-    public List<CompensationDTO> getAllCompensationByEmployeeId(long employee_id);
-    public CompensationDTO getCurrentCompensationByEmployeeId(long employee_id);
-    public CompensationDTO createCompensation(CompensationDTO compensationDTO);
-    public  CompensationDTO updateCompensation(CompensationDTO compensationDTO);
-
-    //public boolean deleteByEmpoyeeId(long employee_id);
+    List<CompensationDTO> getAllCompensationsByEmployeeId(Long employeeId);
+    CompensationDTO getCurrentCompensation(Long employeeId);
+    CompensationDTO createCompensation(Long employeeId, CompensationDTO dto);
+    CompensationDTO updateCompensation(Long employeeId, Long compensationId, CompensationDTO dto);
 }

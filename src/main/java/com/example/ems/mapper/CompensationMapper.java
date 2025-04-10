@@ -10,11 +10,10 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class CompensationMapper {
-
-    public static CompensationDTO toDto(Compensation compensation) {
+    public static CompensationDTO toDTO(Compensation compensation) {
         return CompensationDTO.builder()
                 .compensationId(compensation.getCompensationId())
-                .employee(compensation.getEmployee())
+                .employee_id(compensation.getEmployee().getEmployeeId())
                 .salaryAmount(compensation.getSalaryAmount())
                 .salaryType(compensation.getSalaryType())
                 .bonusAmount(compensation.getBonusAmount())
@@ -24,10 +23,9 @@ public class CompensationMapper {
                 .build();
     }
 
-    public static Compensation toEntity(CompensationDTO dto) {
+    public static Compensation toEntity(CompensationDTO dto, Employee employee) {
         return Compensation.builder()
-                .compensationId(dto.getCompensationId())
-                .employee(dto.getEmployee())
+                .employee(employee)
                 .salaryAmount(dto.getSalaryAmount())
                 .salaryType(dto.getSalaryType())
                 .bonusAmount(dto.getBonusAmount())

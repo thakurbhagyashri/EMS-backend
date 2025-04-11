@@ -20,9 +20,11 @@ public class SecurityConfig {
                         .requestMatchers(
                                 "/swagger-ui.html",
                                 "/swagger-ui/**",
-                                "/v3/api-docs/**"
-                        ).permitAll()
-                        .anyRequest().authenticated()
+                                "/v3/api-docs/**",
+                                "/api/employees/**"
+                        )/*.permitAll()
+                        .anyRequest().authenticated()*/
+                        .permitAll().anyRequest().permitAll()
                 );
 
         return http.build();

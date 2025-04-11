@@ -1,6 +1,6 @@
 package com.example.ems.services;
 
-import com.example.ems.dto.ProjectDTO;
+import com.example.ems.DTO.ProjectDTO;
 
 import java.util.List;
 

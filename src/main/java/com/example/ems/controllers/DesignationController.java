@@ -71,7 +71,7 @@ public class DesignationController {
                     updated.setDesignationId(id);
                     return ResponseEntity.ok(designationService.saveDesignation(updated));
                 })
-                .orElse(ResponseEntity.notFound().build());
+                .orElse( ResponseEntity.notFound().build());
     }
 
     @DeleteMapping("/{id}")

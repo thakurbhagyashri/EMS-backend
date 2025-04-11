@@ -1,4 +1,4 @@
-package com.example.ems.dto;
+package com.example.ems.DTO;
 
 import com.example.ems.entities.Project.ProjectStatus;
 import lombok.*;

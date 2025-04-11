@@ -1,6 +1,6 @@
 package com.example.ems.mappers;
 
-import com.example.ems.dto.ProjectDTO;
+import com.example.ems.DTO.ProjectDTO;
 import com.example.ems.entities.Project;
 
 public class ProjectMapper {

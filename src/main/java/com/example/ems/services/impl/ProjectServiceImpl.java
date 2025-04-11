@@ -1,6 +1,6 @@
 package com.example.ems.services.impl;
 
-import com.example.ems.dto.ProjectDTO;
+import com.example.ems.DTO.ProjectDTO;
 import com.example.ems.entities.Project;
 import com.example.ems.exceptions.InvalidInputException;
 import com.example.ems.exceptions.ResourceNotFoundException;

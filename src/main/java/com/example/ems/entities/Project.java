@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "projects")
@@ -31,6 +32,9 @@ public class Project {
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+
+    @OneToMany(mappedBy = "project")
+    private List<ProjectAssignment> assignments;
 
     public enum ProjectStatus {
         PLANNING, ACTIVE, COMPLETED, ON_HOLD

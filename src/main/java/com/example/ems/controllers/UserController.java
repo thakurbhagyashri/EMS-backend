@@ -1,7 +1,7 @@
 package com.example.ems.controllers;
 
 
-import com.example.ems.dto.UserDTO;
+import com.example.ems.DTO.UserDTO;
 import com.example.ems.services.impl.DesignationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

@@ -1,6 +1,6 @@
 package com.example.ems.controllers;
 
-import com.example.ems.dto.ProjectDTO;
+import com.example.ems.DTO.ProjectDTO;
 import com.example.ems.exceptions.ResourceNotFoundException;
 import com.example.ems.services.ProjectService;
 import lombok.RequiredArgsConstructor;

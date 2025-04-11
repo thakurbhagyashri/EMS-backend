@@ -1,4 +1,4 @@
-package com.example.ems.dto;
+package com.example.ems.DTO;
 import com.example.ems.entities.User.Role;
 import com.example.ems.entities.User.Status;
 import jakarta.validation.constraints.Email;

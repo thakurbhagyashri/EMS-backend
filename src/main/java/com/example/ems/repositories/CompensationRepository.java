@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface CompensationRepository extends JpaRepository<Compensation, Long> {
-  
+    List<Compensation> findByEmployeeEmployeeId(Long employeeId);
 }

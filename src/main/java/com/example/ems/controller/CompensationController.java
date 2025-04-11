@@ -38,7 +38,7 @@ public class CompensationController {
         return compensationServicesImpl.createCompensation(employee_id,dto);
     }
 
-    @PutMapping(path = "/updateCompensation/{compensationId}")
+    @PatchMapping(path = "/updateCompensation/{compensationId}")
     public CompensationDTO updateCompensation(@PathVariable Long employee_id,@PathVariable Long compensationId, @RequestBody CompensationDTO dto){
         return compensationServicesImpl.updateCompensation(employee_id,compensationId,dto);
     }

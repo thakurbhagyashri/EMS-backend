@@ -20,7 +20,7 @@ public class Compensation {
 
     @ManyToOne
     @JoinColumn(name = "employee_id")
-    private Employee employee;
+    private Employee employee ;
 
     private BigDecimal salaryAmount;
 

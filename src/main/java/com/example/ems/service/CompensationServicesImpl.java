@@ -22,7 +22,7 @@ public class CompensationServicesImpl implements CompensationService{
 
     @Override
     public List<CompensationDTO> getAllCompensationsByEmployeeId(Long employeeId) {
-        return compensationRepository.findById(employeeId).stream()
+        return compensationRepository.findByEmployeeEmployeeId(employeeId).stream()
                 .map(CompensationMapper::toDTO).collect(Collectors.toList());
     }
 
@@ -41,7 +41,7 @@ public class CompensationServicesImpl implements CompensationService{
     @Override
     public CompensationDTO updateCompensation(Long employeeId, Long compensationId, CompensationDTO dto) {
         Compensation existing = compensationRepository.findById(compensationId)
-                .orElseThrow(() -> new RuntimeException("Compensation not found"));
+                .orElseThrow(() -> new RuntimeException("No compensation not found"));
 
         if (!existing.getEmployee().getEmployeeId().equals(employeeId)) {
             throw new RuntimeException("Compensation doesn't belong to this employee");

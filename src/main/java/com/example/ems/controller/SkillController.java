@@ -19,7 +19,7 @@ public class SkillController {
     public SkillController(SkillService skillService) {
         this.skillService = skillService;
     }
-    @GetMapping("/all-Skills")
+    @GetMapping
     public ResponseEntity<List<SkillsDTO>> getAllSkills() {
         return ResponseEntity.ok(skillService.getAllSkills());
     }

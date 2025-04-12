@@ -1,4 +1,4 @@
-package com.example.ems.controllers;
+package com.example.ems.controller;
 
 import com.example.ems.DTO.ProjectDTO;
 import com.example.ems.exceptions.ResourceNotFoundException;

@@ -1,4 +1,4 @@
-package com.example.ems.controllers;
+package com.example.ems.controller;
 
 import com.example.ems.entities.Designation;
 import com.example.ems.entities.Employee;

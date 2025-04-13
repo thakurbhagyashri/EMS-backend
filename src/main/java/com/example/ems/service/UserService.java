@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class UserService {
 
-    private final UserRepository userRepository;
+   /* private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
     public List<UserDTO> getAllUsers() {
@@ -63,5 +63,5 @@ public class UserService {
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found"));
         userRepository.delete(user);
-    }
+    }*/
 }

@@ -15,7 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ProjectAssignmentController {
 
-    private final ProjectAssignmentService projectAssignmentService;
+    /*private final ProjectAssignmentService projectAssignmentService;
 
     private final ModelMapper modelMapper;
 
@@ -42,5 +42,5 @@ public class ProjectAssignmentController {
     ) {
         ProjectAssignmentDTO updatedDto = projectAssignmentService.updateAssignment(employeeId, assignmentId, dto);
         return ResponseEntity.ok(updatedDto);
-    }
+    }*/
 }

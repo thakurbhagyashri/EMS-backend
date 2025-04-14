@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -19,13 +20,18 @@ public class EmployeeSkillServiceImpl implements EmployeeSkillService {
 
     @Override
     public EmployeeSkillDTO addSkill(Long employeeId, EmployeeSkillDTO dto) {
+
+       //create Employee and skill entities to associate with EmployeeSkill
         Employee employee = new Employee();
         employee.setEmployeeId(employeeId);
 
         Skill skill = new Skill();
         skill.setSkillId(dto.getSkill_id());
 
+        //Map DTO to Entity
         EmployeeSkill entity = EmployeeSkillMapper.toEntity(dto, employee, skill);
+
+        //Save and return as DTO
         return EmployeeSkillMapper.toDto(employeeSkillRepository.save(entity));
     }
 
@@ -34,7 +40,7 @@ public class EmployeeSkillServiceImpl implements EmployeeSkillService {
         return employeeSkillRepository.findByEmployeeEmployeeId(employeeId)
                 .stream()
                 .map(EmployeeSkillMapper::toDto)
-                .toList();
+                .collect(Collectors.toList());
     }
 
 

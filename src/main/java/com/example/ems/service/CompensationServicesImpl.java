@@ -30,14 +30,15 @@ public class CompensationServicesImpl implements CompensationService{
 
     @Override
     public List<CompensationDTO> getAllCompensationsByEmployeeId(Long employeeId) {
-        return compensationRepository.findByEmployeeEmployeeId(employeeId).stream()
-                .map(CompensationMapper::toDTO)
-                .collect(Collectors.toList());
         /*
          * return compensationRepository.findByEmployeeEmployeeId(employeeId).stream()
          * .map(e->
          * modelMapper.map(e,CompensationDTO.class)).collect(Collectors.toList());
          */
+        return compensationRepository.findByEmployeeEmployeeId(employeeId).stream()
+                .map(CompensationMapper::toDTO)
+                .collect(Collectors.toList());
+
     }
 
     @Override

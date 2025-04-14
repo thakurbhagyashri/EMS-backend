@@ -12,6 +12,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,19 +30,22 @@ public class CompensationServicesImpl implements CompensationService{
 
     @Override
     public List<CompensationDTO> getAllCompensationsByEmployeeId(Long employeeId) {
+        return compensationRepository.findByEmployeeEmployeeId(employeeId).stream()
+                .map(CompensationMapper::toDTO)
+                .collect(Collectors.toList());
         /*
          * return compensationRepository.findByEmployeeEmployeeId(employeeId).stream()
          * .map(e->
          * modelMapper.map(e,CompensationDTO.class)).collect(Collectors.toList());
          */
-        return compensationRepository.findByEmployeeEmployeeId(employeeId).stream()
-                .map(CompensationMapper::toDTO)
-                .collect(Collectors.toList());
     }
 
     @Override
     public CompensationDTO getCurrentCompensation(Long employeeId) {
-        return null;
+        Employee exist = employeeRepository.findById(employeeId)
+                .orElseThrow(() -> new ResourceNotFoundException("No Employee Exist by this ID"));
+        ArrayList<Compensation> c = (ArrayList<Compensation>) compensationRepository.findByEmployeeEmployeeId(employeeId);
+        return CompensationMapper.toDTO(c.get((c.size()-1)));
     }
 
     @Override

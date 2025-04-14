@@ -28,9 +28,9 @@ public class CompensationController {
         return list.isEmpty()?new ResponseEntity<>(new ResourceNotFoundException("Not Data Found"),HttpStatus.NO_CONTENT):
                 new ResponseEntity<>(list,HttpStatus.OK);
     }
-
-    public CompensationDTO getCurrentCompensation(Long employeeId) {
-        return null;
+    @GetMapping(path = "/getCurrentCompensation")
+    public CompensationDTO getCurrentCompensation(Long employee_id) {
+        return compensationServicesImpl.getCurrentCompensation(employee_id);
     }
 
     @PostMapping(path ="/createCompensation")

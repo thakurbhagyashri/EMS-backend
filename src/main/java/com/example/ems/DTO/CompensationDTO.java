@@ -12,10 +12,8 @@ import java.time.LocalDate;
 @Data
 @Builder
 public class CompensationDTO {
-
     private Long compensationId;
     private Long employee_id;
-
     private BigDecimal salaryAmount;
     private Compensation.SalaryType salaryType;
     private BigDecimal bonusAmount;

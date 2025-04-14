@@ -11,7 +11,6 @@ import java.time.LocalDate;
 
 public class CompensationMapper {
     public static CompensationDTO toDTO(Compensation compensation) {
-
         return CompensationDTO.builder()
                 .compensationId(compensation.getCompensationId())
                 .employee_id(compensation.getEmployee().getEmployeeId())

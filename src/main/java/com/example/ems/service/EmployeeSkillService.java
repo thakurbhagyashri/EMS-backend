@@ -10,6 +10,8 @@ public interface EmployeeSkillService {
     EmployeeSkillDTO addEmployeeSkill(Long employeeId, EmployeeSkillDTO employeeSkillDTO);
     List<EmployeeSkillDTO> getAllEmployeeSkills(Long employeeId);
     EmployeeSkillDTO updateSkill(Long employeeId, Long skillId, EmployeeSkillDTO dto);
+
+
 }
 
 

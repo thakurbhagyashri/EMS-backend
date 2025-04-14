@@ -25,6 +25,10 @@ public class EmployeeSkillController {
         return ResponseEntity.ok(employeeSkillServiceImpl.addEmployeeSkill(employeeId, dto));
     }
 
+
+
+
+
     @GetMapping("/getAllEmployeeSkills")
     public ResponseEntity<List<EmployeeSkillDTO>> getAllEmployeeSkills(@PathVariable Long employeeId) {
         return ResponseEntity.ok(employeeSkillServiceImpl.getAllEmployeeSkills(employeeId));

@@ -75,3 +75,4 @@ public class ProjectAssignmentServiceImpl implements ProjectAssignmentService {
         return modelMapper.map(updated, ProjectAssignmentDTO.class);
     }
 }
+}

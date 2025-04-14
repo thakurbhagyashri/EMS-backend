@@ -7,8 +7,8 @@ import java.util.List;
 
 public interface EmployeeSkillService {
 
-    EmployeeSkillDTO addSkill(Long employeeId, EmployeeSkillDTO employeeSkillDTO);
-    List<EmployeeSkillDTO> getSkill(Long employeeId);
+    EmployeeSkillDTO addEmployeeSkill(Long employeeId, EmployeeSkillDTO employeeSkillDTO);
+    List<EmployeeSkillDTO> getAllEmployeeSkills(Long employeeId);
     EmployeeSkillDTO updateSkill(Long employeeId, Long skillId, EmployeeSkillDTO dto);
 }
 

@@ -40,6 +40,7 @@ public class Project {
         PLANNING, ACTIVE, COMPLETED, ON_HOLD
     }
 
+    
     @PrePersist
     protected void onCreate() {
         createdAt = LocalDateTime.now();

@@ -5,7 +5,9 @@ import com.example.ems.DTO.ProjectAssignmentDTO;
 import com.example.ems.entities.Employee;
 import com.example.ems.entities.Project;
 import com.example.ems.entities.ProjectAssignment;
+import com.example.ems.repositories.EmployeeRepository;
 import com.example.ems.repositories.ProjectAssignmentRepository;
+import com.example.ems.repositories.ProjectRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -27,7 +29,7 @@ public class ProjectAssignmentServiceImpl implements ProjectAssignmentService {
     @Override
     @Transactional
     public List<ProjectAssignmentDTO> getAssignmentsByEmployeeId(Long employeeId) {
-        List<ProjectAssignment> assignments = assignmentRepository.findByEmployeeId(employeeId);
+        List<ProjectAssignment> assignments = assignmentRepository.findByEmployee_EmployeeId(employeeId);
         return assignments.stream()
                 .map(a -> modelMapper.map(a, ProjectAssignmentDTO.class))
                 .collect(Collectors.toList());
@@ -56,7 +58,7 @@ public class ProjectAssignmentServiceImpl implements ProjectAssignmentService {
         ProjectAssignment existing = assignmentRepository.findById(assignmentId)
                 .orElseThrow(() -> new RuntimeException("Assignment not found"));
 
-        if (!existing.getEmployee().getId().equals(employeeId)) {
+        if (!existing.getEmployee().getEmployeeId().equals(employeeId)) {
             throw new RuntimeException("Assignment does not belong to this employee");
         }
 
@@ -74,5 +76,4 @@ public class ProjectAssignmentServiceImpl implements ProjectAssignmentService {
         ProjectAssignment updated = assignmentRepository.save(existing);
         return modelMapper.map(updated, ProjectAssignmentDTO.class);
     }
-}
 }

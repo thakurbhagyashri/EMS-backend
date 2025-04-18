@@ -1,5 +1,5 @@
 package com.example.ems.service;
-import com.example.ems.DTO.UserDTO;
+import com.example.ems.dto.UserDTO;
 import com.example.ems.entities.Designation;
 import com.example.ems.entities.Employee;
 import com.example.ems.entities.User;

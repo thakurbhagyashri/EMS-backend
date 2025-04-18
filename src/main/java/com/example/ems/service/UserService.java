@@ -1,6 +1,6 @@
 package com.example.ems.service;
 
-import com.example.ems.DTO.UserDTO;
+import com.example.ems.dto.UserDTO;
 import com.example.ems.entities.User;
 import com.example.ems.exceptions.ResourceNotFoundException;
 import com.example.ems.mapper.UserMapper;

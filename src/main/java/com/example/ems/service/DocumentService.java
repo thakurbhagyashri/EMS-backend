@@ -1,6 +1,6 @@
 package com.example.ems.service;
 
-import com.example.ems.DTO.DocumentDTO;
+import com.example.ems.dto.DocumentDTO;
 
 import java.util.List;
 

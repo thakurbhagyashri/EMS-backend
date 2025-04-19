@@ -1,9 +1,10 @@
-package com.example.ems.service;
+package com.example.ems.serviceImpl;
 
-import com.example.ems.DTO.SkillsDTO;
+import com.example.ems.dto.SkillsDTO;
 import com.example.ems.entities.Skill;
 import com.example.ems.mapper.SkillMapper;
 import com.example.ems.repositories.SkillRepository;
+import com.example.ems.service.SkillService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

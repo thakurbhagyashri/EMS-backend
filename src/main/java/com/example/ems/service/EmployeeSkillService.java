@@ -1,6 +1,6 @@
 package com.example.ems.service;
-import com.example.ems.DTO.EmployeeSkillDTO;
-import com.example.ems.entities.EmployeeSkill;
+import com.example.ems.dto.EmployeeSkillDTO;
+
 import java.util.List;
 
 

@@ -1,6 +1,6 @@
-package com.example.ems.service;
+package com.example.ems.serviceImpl;
 
-import com.example.ems.DTO.DocumentDTO;
+import com.example.ems.dto.DocumentDTO;
 import com.example.ems.entities.Document;
 import com.example.ems.entities.Employee;
 import com.example.ems.exceptions.ResourceNotFoundException;

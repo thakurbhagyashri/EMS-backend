@@ -1,6 +1,6 @@
 package com.example.ems.mapper;
 
-import com.example.ems.DTO.UserDTO;
+import com.example.ems.dto.UserDTO;
 import com.example.ems.entities.User;
 
 public class UserMapper {

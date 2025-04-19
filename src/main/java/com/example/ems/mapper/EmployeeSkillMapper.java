@@ -1,6 +1,6 @@
 package com.example.ems.mapper;
 
-import com.example.ems.DTO.EmployeeSkillDTO;
+import com.example.ems.dto.EmployeeSkillDTO;
 import com.example.ems.entities.Employee;
 import com.example.ems.entities.EmployeeSkill;
 import com.example.ems.entities.Skill;

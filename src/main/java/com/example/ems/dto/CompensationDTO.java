@@ -1,11 +1,8 @@
-package com.example.ems.DTO;
+package com.example.ems.dto;
 
 import com.example.ems.entities.Compensation;
-import com.example.ems.entities.Employee;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

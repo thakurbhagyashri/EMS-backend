@@ -1,10 +1,9 @@
 package com.example.ems.controller;
 
-import com.example.ems.DTO.ProjectAssignmentDTO;
+import com.example.ems.dto.ProjectAssignmentDTO;
 import com.example.ems.service.ProjectAssignmentService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

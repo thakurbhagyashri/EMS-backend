@@ -1,6 +1,6 @@
 package com.example.ems.controller;
 
-import com.example.ems.DTO.DocumentDTO;
+import com.example.ems.dto.DocumentDTO;
 import com.example.ems.service.DocumentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

@@ -1,5 +1,6 @@
-package com.example.ems.service;
+package com.example.ems.serviceImpl;
 
+import com.example.ems.service.EmailService;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.*;
 import org.slf4j.Logger;

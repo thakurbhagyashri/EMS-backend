@@ -1,14 +1,14 @@
-package com.example.ems.service;
+package com.example.ems.serviceImpl;
 
-import com.example.ems.DTO.EmployeeSkillDTO;
+import com.example.ems.dto.EmployeeSkillDTO;
 import com.example.ems.entities.Employee;
-import com.example.ems.entities.EmployeeSkill;
 import com.example.ems.entities.Skill;
 import com.example.ems.exceptions.ResourceNotFoundException;
 import com.example.ems.mapper.EmployeeSkillMapper;
 import com.example.ems.repositories.EmployeeRepository;
 import com.example.ems.repositories.EmployeeSkillRepository;
 import com.example.ems.repositories.SkillRepository;
+import com.example.ems.service.EmployeeSkillService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

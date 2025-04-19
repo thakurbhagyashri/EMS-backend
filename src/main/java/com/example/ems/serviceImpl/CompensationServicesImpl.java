@@ -1,12 +1,13 @@
-package com.example.ems.service;
+package com.example.ems.serviceImpl;
 
-import com.example.ems.DTO.CompensationDTO;
+import com.example.ems.dto.CompensationDTO;
 import com.example.ems.entities.Compensation;
 import com.example.ems.entities.Employee;
 import com.example.ems.exceptions.ResourceNotFoundException;
 import com.example.ems.mapper.CompensationMapper;
 import com.example.ems.repositories.CompensationRepository;
 import com.example.ems.repositories.EmployeeRepository;
+import com.example.ems.service.CompensationService;
 import lombok.NoArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ import java.util.stream.Collectors;
 
 @Service
 @NoArgsConstructor
-public class CompensationServicesImpl implements CompensationService{
+public class CompensationServicesImpl implements CompensationService {
     @Autowired
     private CompensationRepository compensationRepository;
 

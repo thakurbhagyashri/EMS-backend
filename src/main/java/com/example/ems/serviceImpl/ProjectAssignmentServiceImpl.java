@@ -1,15 +1,16 @@
-package com.example.ems.service;
+package com.example.ems.serviceImpl;
 
 
-import com.example.ems.DTO.ProjectAssignmentDTO;
+import com.example.ems.dto.ProjectAssignmentDTO;
 import com.example.ems.entities.Employee;
 import com.example.ems.entities.Project;
 import com.example.ems.entities.ProjectAssignment;
+import com.example.ems.repositories.EmployeeRepository;
 import com.example.ems.repositories.ProjectAssignmentRepository;
+import com.example.ems.service.ProjectAssignmentService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,13 +22,13 @@ public class ProjectAssignmentServiceImpl implements ProjectAssignmentService {
 
     private final ProjectAssignmentRepository assignmentRepository;
     private final EmployeeRepository employeeRepository;
-    private final ProjectRepository projectRepository;
+    //private final ProjectRepository projectRepository;
     private final ModelMapper modelMapper;
 
     @Override
     @Transactional
     public List<ProjectAssignmentDTO> getAssignmentsByEmployeeId(Long employeeId) {
-        List<ProjectAssignment> assignments = assignmentRepository.findByEmployeeId(employeeId);
+        List<ProjectAssignment> assignments = null;//assignmentRepository.findByEmployeeId(employeeId);
         return assignments.stream()
                 .map(a -> modelMapper.map(a, ProjectAssignmentDTO.class))
                 .collect(Collectors.toList());
@@ -39,8 +40,9 @@ public class ProjectAssignmentServiceImpl implements ProjectAssignmentService {
         Employee employee = employeeRepository.findById(employeeId)
                 .orElseThrow(() -> new RuntimeException("Employee not found"));
 
-        Project project = projectRepository.findById(dto.getProjectId())
-                .orElseThrow(() -> new RuntimeException("Project not found"));
+        Project project = null;
+        // projectRepository.findById(dto.getProjectId())
+         //       .orElseThrow(() -> new RuntimeException("Project not found"));
 
         ProjectAssignment assignment = modelMapper.map(dto, ProjectAssignment.class);
         assignment.setEmployee(employee);
@@ -56,12 +58,12 @@ public class ProjectAssignmentServiceImpl implements ProjectAssignmentService {
         ProjectAssignment existing = assignmentRepository.findById(assignmentId)
                 .orElseThrow(() -> new RuntimeException("Assignment not found"));
 
-        if (!existing.getEmployee().getId().equals(employeeId)) {
-            throw new RuntimeException("Assignment does not belong to this employee");
-        }
+        //if (!existing.getEmployee().getId().equals(employeeId)) {
+            //throw new RuntimeException("Assignment does not belong to this employee");
+        //}
 
-        Project project = projectRepository.findById(dto.getProjectId())
-                .orElseThrow(() -> new RuntimeException("Project not found"));
+        Project project = null;//projectRepository.findById(dto.getProjectId())
+               // .orElseThrow(() -> new RuntimeException("Project not found"));
 
         // Update values
         existing.setProject(project);
@@ -75,4 +77,4 @@ public class ProjectAssignmentServiceImpl implements ProjectAssignmentService {
         return modelMapper.map(updated, ProjectAssignmentDTO.class);
     }
 }
-}
+

@@ -1,8 +1,8 @@
 package com.example.ems.controller;
 
 
-import com.example.ems.DTO.UserDTO;
-import com.example.ems.service.UserService;
+import com.example.ems.dto.UserDTO;
+import com.example.ems.serviceImpl.UserServiceImpl;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +16,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 @RequiredArgsConstructor
 public class UserController {
 
-    private final UserService userService;
+    private final UserServiceImpl userService;
 
     @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
     @GetMapping

@@ -1,13 +1,8 @@
 package com.example.ems.mapper;
 
-import com.example.ems.DTO.CompensationDTO;
-import com.example.ems.DTO.UserDTO;
+import com.example.ems.dto.CompensationDTO;
 import com.example.ems.entities.Compensation;
 import com.example.ems.entities.Employee;
-import com.example.ems.entities.User;
-
-import java.math.BigDecimal;
-import java.time.LocalDate;
 
 public class CompensationMapper {
     public static CompensationDTO toDTO(Compensation compensation) {

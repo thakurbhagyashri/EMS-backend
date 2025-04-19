@@ -1,4 +1,4 @@
-package com.example.ems.Config;
+package com.example.ems.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

@@ -1,6 +1,6 @@
 package com.example.ems.controller;
 
-import com.example.ems.DTO.SkillsDTO;
+import com.example.ems.dto.SkillsDTO;
 import com.example.ems.service.SkillService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
 @Table(name = "projects")
@@ -21,8 +20,6 @@ public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long projectId;
-    @OneToMany(mappedBy = "project")
-    private List<ProjectAssignment> assignments;
 
     private String name;
     private String description;

@@ -1,6 +1,6 @@
 package com.example.ems.mapper;
 
-import com.example.ems.DTO.PerformanceReviewDto;
+import com.example.ems.dto.PerformanceReviewDto;
 import com.example.ems.entities.PerformanceReview;
 
 public class PerformanceReviewMapper {

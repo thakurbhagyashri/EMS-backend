@@ -1,6 +1,6 @@
 package com.example.ems.mapper;
 
-import com.example.ems.DTO.EmployeeDTO;
+import com.example.ems.dto.EmployeeDTO;
 import com.example.ems.entities.Employee;
 import com.example.ems.entities.User;
 import org.springframework.stereotype.Component;

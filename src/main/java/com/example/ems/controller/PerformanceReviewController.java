@@ -1,6 +1,6 @@
 package com.example.ems.controller;
 
-import com.example.ems.DTO.PerformanceReviewDto;
+import com.example.ems.dto.PerformanceReviewDto;
 import com.example.ems.service.PerformanceReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

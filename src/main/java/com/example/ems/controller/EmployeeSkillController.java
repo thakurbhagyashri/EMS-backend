@@ -1,8 +1,6 @@
 package com.example.ems.controller;
-import com.example.ems.DTO.EmployeeSkillDTO;
-import com.example.ems.entities.EmployeeSkill;
-import com.example.ems.service.EmployeeSkillService;
-import com.example.ems.service.EmployeeSkillServiceImpl;
+import com.example.ems.dto.EmployeeSkillDTO;
+import com.example.ems.serviceImpl.EmployeeSkillServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

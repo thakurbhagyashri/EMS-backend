@@ -1,7 +1,6 @@
 package com.example.ems.service;
 
-import com.example.ems.DTO.CompensationDTO;
-import org.springframework.stereotype.Service;
+import com.example.ems.dto.CompensationDTO;
 
 
 import java.util.List;

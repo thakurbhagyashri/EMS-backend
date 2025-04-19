@@ -1,4 +1,4 @@
-package com.example.ems.DTO;
+package com.example.ems.dto;
 import com.example.ems.entities.EmployeeSkill.ProficiencyLevel;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;

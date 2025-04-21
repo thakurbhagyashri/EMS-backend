@@ -61,6 +61,7 @@ public class DesignationController {
         return ResponseEntity.ok(designationService.getActiveDesignations(date));
     }
 
+
     @PostMapping
     public ResponseEntity<Designation> createDesignation(@RequestBody Designation designation) {
         return ResponseEntity.ok(designationService.saveDesignation(designation));
